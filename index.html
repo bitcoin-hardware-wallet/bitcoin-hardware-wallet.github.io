@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <style>
+       table .checked {
+         color: orange;
+       }
+       button {
+         background-color: white;
+       }
+    </style>
+
+    <title>Bitcoin Hardware Wallet Comparison</title>
+  </head>
+
+  <body>
+    <br />
+    <!-- Begin page content -->
+    <div class="container">
+      <h1>Bitcoin Hardware Wallet Comparison</h1>
+      <p>
+        <a href="https://www.youtube.com/watch?v=vt-zXEsJ61U">"Your keys, your bitcoin. Not your keys, not your bitcoin."</a>
+        <span class="pull-right">
+          <a href="https://twitter.com/mflaxman?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @mflaxman</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </span>
+      </p>
+
+      <table class="table table-bordered">
+
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">
+              <h4><a href="https://shapeshift.io/keepkey/">KeepKey</a></h4>
+            </th>
+            <th scope="col">
+              <h4><a href="https://shop.ledger.com/products/ledger-nano-s">Ledger Nano S</a></h4>
+            </th>
+            <th scope="col">
+              <h4><a href="https://shop.trezor.io/product/trezor-model-t">Trezor Model T</a></h4>
+            </th>
+            <th scope="col">
+              <h4><a href="https://coldcardwallet.com/">Coldcard™ Mk2</a></h4>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <div style="height: 100px; overflow:auto;">
+                <a href="https://shapeshift.io/keepkey/">
+                  <img height="100%" src="https://shapeshift.io/keepkey/images/colors1.png">
+                </a>
+              </div>
+            </td>
+            <td>
+              <div style="height: 100px; overflow:auto;">
+                <a href="https://shop.ledger.com/products/ledger-nano-s">
+                  <img height="100%" src="https://cdn.shopify.com/s/files/1/2974/4858/products/nano-s-8_3x_grande_952f20b0-29bc-42b8-bcd5-1645ea2c4f18_768x.png">
+                </a>
+              </div>
+            </td>
+            <td>
+              <div style="height: 100px; overflow:auto;">
+                <a href="https://shop.trezor.io/product/trezor-model-t">
+                  <img height="100%" src="https://shop.trezor.io/static/img/product/T2.jpg">
+                </a>
+              </div>
+            </td>
+            <td>
+              <div style="height: 100px; overflow:auto;">
+                <a href="https://coldcardwallet.com/">
+                  <img height="100%" src="https://coldcardwallet.com/static/images/coldcard-front.png">
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              USD Price <small>(excluding shipping)</small>
+            </th>
+            <td>
+              <button type="button" class="btn btn-sm">
+                $79
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-sm">
+                $59
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='€149 EUR ($167 price conversion to USD as of 2019-07-09)'
+              >
+                ~$167
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-sm">
+                $100
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1146813775380647937">Multisig Support</a>
+            </th>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Multi-device multi-sig only possible via <a href="https://electrum.org/">Electrum</a> and other third party software, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='
+                  Multi-device multi-sig only possible via <a href="https://electrum.org/">Electrum</a> and other third party software, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).
+                  Dangerous to use for multisig, as it <a href="https://www.reddit.com/r/ledgerwallet/comments/6mwpnt/electrum_multisig_with_ledger_on_testnet/">does not verify that the change address used in a transaction is yours</a>; fixing this would immediately raise their score.
+                '
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Multi-device multi-sig only possible via <a href="https://electrum.org/">Electrum</a> and other third party software, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>), and also works with <a href="https://electrum.org/">Electrum</a>.'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1146813023799128064">Airgap</a>
+            </th>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Device is plugged into and somewhat driven by computer, which may be infected with malware (the whole reason for the HW wallet in the first place).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Device is plugged into and somewhat driven by computer, which may be infected with malware (the whole reason for the HW wallet in the first place).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Device is plugged into and somewhat driven by computer, which may be infected with malware (the whole reason for the HW wallet in the first place).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Device is plugged into and somewhat driven by computer, which may be infected with malware (the whole reason for the HW wallet in the first place), but there is an option to run via built-in SD Card (still not a true airgap).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1146813024621252608">User Input</a>
+            </th>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Only 1 button. Impossible to enter a recovery seed or passphrase on the device.'
+              >
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='2 buttons that are very hard to click. Difficult to enter a recovery seed or passphrase on the device, and this encourages dangerously short passphrases.'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Tiny touchscreen is a little hard to use but sufficient given how infrequently you need to enter your recovery seed (and passphrase).'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content="Not a full keyboard (0-9 only) and the keys are not very easy to press, but sufficient given how infrequently you need to enter your recovery seed (and passphrase)."
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1146813026374492160">Privacy<a/>
+            </th>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='
+                  Fetches address data and broadcasts transactions to/from company API, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).
+                  Can be configured to fetch data from <a href="https://electrum.org/">Electrum</a>, but this is similarly bad for privacy unless you run your own <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a> (much more complicated than just running Bitcoin Core).
+                '
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='
+                  Fetches address data and broadcasts transactions to/from company API, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).
+                  Can be configured to fetch data from <a href="https://electrum.org/">Electrum</a>, but this is similarly bad for privacy unless you run your own <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a> (much more complicated than just running Bitcoin Core).
+                '
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='
+                  Fetches address data and broadcasts transactions to/from company API, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).
+                  Can be configured to fetch data from <a href="https://electrum.org/">Electrum</a>, but this is similarly bad for privacy unless you run your own <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a> (much more complicated than just running Bitcoin Core).
+                '
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='
+                  Directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).
+                  Like other hardware wallets, it can also use <a href="https://electrum.org/">Electrum</a>, but this is bad for privacy unless you run your own <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a> (much more complicated than just running Bitcoin Core).
+                '
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1146813027079077888">Trustless<a/>
+            </th>
+             <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='
+                  Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.
+                  Closed source secure element.
+                '
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                data-html="true"
+                class="btn btn-sm"
+                data-toggle="popover"
+                data-content='Code is open source, but secure element is closed source.'
+              >
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Line break in table -->
+          <tr><td colspan="5"></td></tr>
+
+          <tr>
+            <td colspan="5"><h5>Other Criteria</h5></td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1146813777633038338">Programming Language</a>
+            </th>
+            <td>Python</td>
+            <td>C</td>
+            <td>Python</td>
+            <td>Python</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <a href="https://twitter.com/mflaxman/status/1148639724132851713">Altcoin Support</a>
+            </th>
+            <td>40+</td>
+            <td>1,100+</td>
+            <td>1,000+</td>
+            <td>Not Really</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <p class="small">
+        (Click on each star rating for supporting details)
+      </p>
+
+      <h4>FAQs</h4>
+      <p>
+        <strong>Q: Why is multisig so important?</strong><br />
+        <strong>A:</strong>
+        Multisig (with > 1 required signatures) is essential for large transactions because it eliminates single points of failure in both your hardware and software.
+        There are so many things that could go wrong and cause you to lose funds with a single hardware wallet.
+        You can spend an insane amount of effort to be 99.999% sure it won't happen with one signature, or spend much less effort to be 99.9% sure that each of two devices are secure.
+        More security, less headache.
+        See <a href="https://twitter.com/mflaxman/status/1146813775380647937">this tweet</a> for more info.
+      </p>
+      <p>
+        <strong>Q: What's the best way to do multi-device multisig now?</strong><br />
+        <strong>A:</strong>
+        For now, the easiest solution for most people is to use Electrum (guide <a href="https://saleemrashid.com/2018/01/27/hardware-wallet-electrum-multisig/">here</a>).
+        This is very bad for privacy unless you run your own <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a>, which is much more complicated than just running Bitcoin Core.
+        Hopefully, all decent hardware wallet manufacturers will adopt <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a> in the future.
+        Then you can get the privacy, security, and enforcement of consensus rules that only Bitcoin Core can provide, and without the heavy resources requirements of <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a>.
+      </p>
+      <p>
+        <strong>Q: Why are you so zealous about securing bitcoin?</strong><br />
+        <strong>A:</strong>
+        While it is impossible to know for sure how many coins have been lost, estimates range from 0.5%-2% of all coins are lost <strong>each year</strong> (excluding Satoshi's possibly lost bitcoin).
+        The ability to secure bitcoin is fundamental to its value proposition, and threatens its adoption.
+        When bitcoin is hard to secure, users turn towards trusted third parties.
+        This is the problem bitcoin was made to solve, and these trusted third parties with massive bitcoin holdings create systemic risk for the bitcoin ecosystem.
+      </p>
+      <p>
+        <strong>Q: Who are you and why should I trust your opinion?</strong><br />
+        <strong>A:</strong>
+        I'm just a humble HODLer who has become frustrated that after a decade bitcoin still doesn't have a straightforward way for end-users to secure their own bitcoin trustlessly (and without giving up their privacy).
+        With PSBT (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>) now part of Bitcoin Core, we are really close to solving this problem.
+        I have no affiliation with any of these companies and none are paying me.
+        Don't trust me and do your own research anyway.
+      </p>
+      <p>
+        <strong>Q: Why isn't "security" an evaluation criteria?</strong><br />
+        <strong>A:</strong>
+        Each category is directly tied to security, and being "secure" is very hard to define.
+        While it's hard to prove that something is secure, any wallet that doesn't get high marks on all these criteria is likely insecure.
+      </p>
+
+      <hr />
+      <span class="small">
+        <p>
+          TODO: potential HW wallets to add to this table:
+          <ul>
+            <li><a href="https://shiftcrypto.ch/bitbox02/">BitBox02</a></li>
+            <li><a href="https://coolwallet.io/">CoolWallet S</a> (doesn't support multisig)</li>
+            <li><a href="https://www.ellipal.com/collections/ellipal/products/hardwarewallet">Ellipal</a> (doesn't support multisig)</li>
+          </ul>
+        </p>
+      </span>
+
+      <a class="github-fork-ribbon right-bottom fixed" href="https://github.com/bitcoin-hardware-wallet/bitcoin-hardware-wallet.github.io/blob/master/index.html" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+      $( document ).ready(function () {
+        $('[data-toggle="popover"]').popover({ trigger: "hover focus click" });
+      })
+    </script>
+  </body>
+</html>
