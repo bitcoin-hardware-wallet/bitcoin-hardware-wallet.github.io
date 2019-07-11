@@ -461,6 +461,7 @@
         (Click on each star rating for supporting details)
       </p>
 
+      <hr />
       <h4>FAQs</h4>
       <p>
         <strong>Q: Why is multisig so important?</strong><br />
@@ -478,6 +479,17 @@
         This is very bad for privacy unless you run your own <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a>, which is much more complicated than just running Bitcoin Core.
         Hopefully, all decent hardware wallet manufacturers will adopt <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a> in the future.
         Then you can get the privacy, security, and enforcement of consensus rules that only Bitcoin Core can provide, and without the heavy resources requirements of <a href="https://github.com/chris-belcher/electrum-personal-server">Electrum Personal Server</a>.
+      </p>
+      <p>
+        <strong>Q: Why the alarmism, isn't any hardware wallet good enough?</strong><br />
+        <strong>A:</strong>
+        As any software engineer will tell you, all the modern systems we use are held together by
+        <a href="https://xkcd.com/844/">the tech equivalent of duct-tape</a>,
+        and cryptography is much harder than writing regular code.
+        It's not just an academic thing, stealing bitcoin private keys is perhaps the most lucrative use of bugs, exploits and backdoors.
+        This talk on
+        <a href="https://www.youtube.com/watch?v=P5PI5MZ_2yo">the History of Hardware Wallet Attacks</a>
+        should convince you that solving 100% of these and all future problems is an unrealistic goal (hence the importance of multi hardware wallet multisig).
       </p>
       <p>
         <strong>Q: Why are you so zealous about securing bitcoin?</strong><br />
@@ -502,18 +514,26 @@
         Each category is directly tied to security, and being "secure" is very hard to define.
         While it's hard to prove that something is secure, any wallet that doesn't get high marks on all these criteria is likely insecure.
       </p>
+      <p>
+        <strong>Q: What about hardware wallet X?</strong><br />
+        <strong>A:</strong>
+        I excluded hardware wallets that don't support multisig as this seems fundamentally broken for a security product.
+        These include
+        <a href="https://coolwallet.io/">CoolWallet S</a>,
+        <a href="https://www.ellipal.com/collections/ellipal/products/hardwarewallet">Ellipal</a>,
+        <a href="https://shop.cobo.com/products/cobo-vault">Cobo Vault</a>,
+        and
+        <a href="https://bitfi.com/">BitFi</a>.
+        If any of these add support, it might be worth reconsidering them.
+        While the best measure of supporting multisig across different hardware manufacturers is using Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">ideally with BIP174</a>), hardware wallet <a href="http://docs.electrum.org/en/latest/hardware-linux.html#python-libraries">multisig with Electrum</a> is another possibility.
 
-      <hr />
-      <span class="small">
-        <p>
-          TODO: potential HW wallets to add to this table:
-          <ul>
-            <li><a href="https://shiftcrypto.ch/bitbox02/">BitBox02</a></li>
-            <li><a href="https://coolwallet.io/">CoolWallet S</a> (doesn't support multisig)</li>
-            <li><a href="https://www.ellipal.com/collections/ellipal/products/hardwarewallet">Ellipal</a> (doesn't support multisig)</li>
-          </ul>
-        </p>
-      </span>
+        <span class="small">
+          TODO: consider adding
+          <a href="https://shiftcrypto.ch/bitbox02/">BitBox02</a> and
+          <a href="https://www.archos.com/products/crypto/archos_safetmini/index.html">Archos Safe-T mini</a>?
+        </small>
+
+      </p>
 
       <a class="github-fork-ribbon right-bottom fixed" href="https://github.com/bitcoin-hardware-wallet/bitcoin-hardware-wallet.github.io/blob/master/index.html" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
     </div>
