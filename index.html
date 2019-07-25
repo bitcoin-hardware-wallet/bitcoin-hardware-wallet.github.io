@@ -146,10 +146,12 @@
                 data-toggle="popover"
                 data-content='
                   Multi-device multi-sig only possible via <a href="https://electrum.org/">Electrum</a> and other third party software, not directly compatible with Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>).
-                  Dangerous to use for multisig, as it <a href="https://www.reddit.com/r/ledgerwallet/comments/6mwpnt/electrum_multisig_with_ledger_on_testnet/">does not verify that the change address used in a transaction is yours</a>; fixing this would immediately raise their score.
+                  Dangerous to use for multisig, as it
+                    <a href="https://github.com/bitcoin-hardware-wallet/bitcoin-hardware-wallet.github.io">does not verify receiving addresses</a>, and
+                    <a href="https://www.reddit.com/r/ledgerwallet/comments/6mwpnt/electrum_multisig_with_ledger_on_testnet/">does not verify that the change address used in a transaction is yours</a>;
+                    fixing these issues would immediately raise their score.
                 '
               >
-                <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
               </button>
             </td>
@@ -526,7 +528,7 @@
         and
         <a href="https://bitfi.com/">BitFi</a>.
         If any of these add support, it might be worth reconsidering them.
-        While the best measure of supporting multisig across different hardware manufacturers is using Bitcoin Core (<a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">ideally with BIP174</a>), hardware wallet <a href="http://docs.electrum.org/en/latest/hardware-linux.html#python-libraries">multisig with Electrum</a> is another possibility.
+        While the best measure of supporting multisig across different hardware manufacturers is using Bitcoin Core (ideally with <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>), hardware wallet <a href="http://docs.electrum.org/en/latest/hardware-linux.html#python-libraries">multisig with Electrum</a> is another possibility.
 
         <span class="small">
           TODO: consider adding
@@ -536,7 +538,12 @@
 
       </p>
 
-      <a class="github-fork-ribbon right-bottom fixed" href="https://github.com/bitcoin-hardware-wallet/bitcoin-hardware-wallet.github.io/blob/master/index.html" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+      <a
+        class="github-fork-ribbon right-bottom fixed"
+        href="https://github.com/bitcoin-hardware-wallet/bitcoin-hardware-wallet.github.io"
+        data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub"
+      >Fork me on GitHub</a>
     </div>
 
     <!-- Optional JavaScript -->
