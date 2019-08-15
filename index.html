@@ -514,6 +514,17 @@
         Follow me on twitter <a href="https://twitter.com/mflaxman">here</a>.
       </p>
       <p>
+        <strong>Q: Why such a strong emphasis on BIP174 (PSBT)? Isn't it just a serialization format?</strong><br />
+        <strong>A:</strong>
+        Partially Signed Bitcoin Transactions (PSBT), aka
+        <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP 174</a>,
+        is a serialization format for passing around new bitcoin transactions between devices in various states (unsigned, partially signed, and fully signed).
+        As of bitcon core v0.17, it is the "official" standard for how to do this.
+        PSBT support is not sufficient for simple multi HW wallet multisig, but accomplishing that goal without PSBT is very difficult.
+        Thus PSBT adoption signals that a wallet is attempting to be interoperable and support more of bitcoin core's features.
+        While currently it's command-line only in bitcoin core, there are several teams building GUIs on top of this (and any wallet that doesn't support BIP174 will likely be excluded).
+      </p>
+      <p>
         <strong>Q: Why isn't "security" an evaluation criteria?</strong><br />
         <strong>A:</strong>
         Each category is directly tied to security, and being "secure" is very hard to define.
