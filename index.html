@@ -483,25 +483,25 @@
         It can also be trusted to perform other actions, for example it might destroy itself if an invalid PIN (guess) were X times, or display to a user if their device's firmware had been tampered with.
         This is useful at preventing an <a href="https://en.wikipedia.org/wiki/Evil_maid_attack">evil maid attack</a>.
         There are three main drawbacks to a secure element:
-        <ol>
-          <li>
-            There are currently <strong>no open source secure elements in existence</strong>, and the cost to produce one is very high.
-            This means that at least some portion of your code must be closed-source, which is dangerous.
-            Coldcard has a unique approach where they use the secure element only to store your private key material, but use a general purpose microcontroller unit (MCU) to perform business logic on that key.
-          </li>
-          <li>
-            To take advantage of the secure element, you effectively must have some sort of PIN.
-            If your hardware wallet is lost/destroyed, this PIN is useless in recovering bitcoin.
-            If you use a standard BIP39 passphrase (i.e. 25th word) for your bitcoin (you should!) you must now remember this PIN <strong>in addition</strong> to that passphrase.
-            <strong>Having more passwords to remember often causes users to use weaker ones and/or forget</strong>.
-          </li>
-          <li>
-            <strong>Complexity is the enemy of security</strong>.
-            If you know what you're doing and take advantage of the secure element's benefits then it can enhance your security.
-            However, for a proper multisig setup (which has redundancy in case a key is lost/stolen), the benefit / complexity tradeoff is more of a personal preference.
-          <li>
-        </ol>
       </p>
+      <ol>
+        <li>
+          There are currently <strong>no open source secure elements in existence</strong>, and the cost to produce one is very high.
+          This means that at least some portion of your code must be closed-source, which is dangerous.
+          Coldcard has a unique approach where they use the secure element only to store your private key material, but use a general purpose microcontroller unit (MCU) to perform business logic on that key.
+        </li>
+        <li>
+          To take advantage of the secure element, you effectively must have some sort of PIN.
+          If your hardware wallet is lost/destroyed, this PIN is useless in recovering bitcoin.
+          If you use a standard BIP39 passphrase (i.e. 25th word) for your bitcoin (you should!) you must now remember this PIN in addition to that passphrase.
+          <strong>Having more passwords to remember often causes users to use weaker ones and/or forget</strong>.
+        </li>
+        <li>
+          <strong>Complexity is the enemy of security</strong>.
+          If you know what you're doing and take advantage of the secure element's benefits then it can enhance your security.
+          However, for a proper multisig setup (which has redundancy in case a key is lost/stolen), the benefit / complexity tradeoff is more of a personal preference.
+        <li>
+      </ol>
       <p>
         <strong>Q: What about hardware wallet X?</strong><br />
         <strong>A:</strong>
