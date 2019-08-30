@@ -372,68 +372,6 @@
             </td>
           </tr>
 
-          <tr>
-            <th scope="row">
-              <a href="https://twitter.com/mflaxman/status/1146813027079077888">Trustless<a/>
-            </th>
-             <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.'
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='
-                  Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.
-                  Closed source secure element.
-                '
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.'
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='Code is open source, but secure element is closed source.'
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-          </tr>
-
           <!-- Line break in table -->
           <tr><td colspan="5"></td></tr>
 
@@ -537,6 +475,32 @@
         <strong>A:</strong>
         Each category is directly tied to security, and being "secure" is very hard to define.
         While it's hard to prove that something is secure, any wallet that doesn't get high marks on all these criteria is likely insecure.
+      </p>
+      <p>
+        <strong>Q: What about a "secure element"?</strong><br />
+        <strong>A:</strong>
+        A secure element stores your private key material inside a chip that that is designed to never reveal your seed, even to an attacker with physical access.
+        It can also be trusted to perform other actions, for example it might destroy itself if an invalid PIN (guess) were X times, or display to a user if their device's firmware had been tampered with.
+        This is useful at preventing an <a href="https://en.wikipedia.org/wiki/Evil_maid_attack">evil maid attack</a>.
+        There are three main drawbacks to a secure element:
+        <ol>
+          <li>
+            There are currently <strong>no open source secure elements in existence</strong>, and the cost to produce one is very high.
+            This means that at least some portion of your code must be closed-source, which is dangerous.
+            Coldcard has a unique approach where they use the secure element only to store your private key material, but use a general purpose microcontroller unit (MCU) to perform business logic on that key.
+          </li>
+          <li>
+            To take advantage of the secure element, you effectively must have some sort of PIN.
+            If your hardware wallet is lost/destroyed, this PIN is useless in recovering bitcoin.
+            If you use a standard BIP39 passphrase (i.e. 25th word) for your bitcoin (you should!) you must now remember this PIN <strong>in addition</strong> to that passphrase.
+            <strong>Having more passwords to remember often causes users to use weaker ones and/or forget</strong>.
+          </li>
+          <li>
+            <strong>Complexity is the enemy of security</strong>.
+            If you know what you're doing and take advantage of the secure element's benefits then it can enhance your security.
+            However, for a proper multisig setup (which has redundancy in case a key is lost/stolen), the benefit / complexity tradeoff is more of a personal preference.
+          <li>
+        </ol>
       </p>
       <p>
         <strong>Q: What about hardware wallet X?</strong><br />
