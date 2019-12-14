@@ -21,14 +21,14 @@
        }
     </style>
 
-    <title>Bitcoin Hardware Wallet Comparison</title>
+    <title>Bitcoin Multisig Hardware Wallet Comparison</title>
   </head>
 
   <body>
     <br />
     <!-- Begin page content -->
     <div class="container">
-      <h1>Bitcoin Hardware Wallet Comparison</h1>
+      <h1>Bitcoin Multisig Hardware Wallet Comparison</h1>
       <p>
         <a href="https://www.youtube.com/watch?v=vt-zXEsJ61U">"Your keys, your bitcoin. Not your keys, not your bitcoin."</a>
         <span class="pull-right">
@@ -372,68 +372,6 @@
             </td>
           </tr>
 
-          <tr>
-            <th scope="row">
-              <a href="https://twitter.com/mflaxman/status/1146813027079077888">Trustless<a/>
-            </th>
-             <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.'
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='
-                  Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.
-                  Closed source secure element.
-                '
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='Code is open source, but limited multisig support makes it inherently trusting that you have <em>everything</em> (supply chain, software, hardware, side-channel attacks, etc) right.'
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-            <td>
-              <button
-                type="button"
-                data-html="true"
-                class="btn btn-sm"
-                data-toggle="popover"
-                data-content='Code is open source, but secure element is closed source.'
-              >
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </button>
-            </td>
-          </tr>
-
           <!-- Line break in table -->
           <tr><td colspan="5"></td></tr>
 
@@ -445,9 +383,9 @@
             <th scope="row">
               <a href="https://twitter.com/mflaxman/status/1146813777633038338">Programming Language</a>
             </th>
-            <td>Python</td>
             <td>C</td>
-            <td>Python</td>
+            <td>C</td>
+            <td>C & Python</td>
             <td>C & Python</td>
           </tr>
 
@@ -458,7 +396,7 @@
             <td>40+</td>
             <td>1,100+</td>
             <td>1,000+</td>
-            <td>Not Really</td>
+            <td>Bitcoin Only</td>
           </tr>
 
         </tbody>
@@ -539,10 +477,39 @@
         While it's hard to prove that something is secure, any wallet that doesn't get high marks on all these criteria is likely insecure.
       </p>
       <p>
+        <strong>Q: What about a "secure element"?</strong><br />
+        <strong>A:</strong>
+        A secure element stores your private key material inside a chip that that is designed to never reveal your seed, even to an attacker with physical access.
+        It can also be trusted to perform other actions, for example it might delete itself after X invalid PIN attempts, or display if their device's firmware had been tampered with.
+        This is useful at preventing an <a href="https://en.wikipedia.org/wiki/Evil_maid_attack">evil maid attack</a>.
+        There are three main drawbacks to a secure element:
+      </p>
+      <ol>
+        <li>
+          There is currently <strong>no way to run open source code on a manufacturer's secure element</strong>, and the cost to produce your own is very high.
+          This means that at least some portion of your code must be closed-source, which is dangerous.
+          Coldcard has a unique approach where they use the secure element only to store your private key material, but use a general purpose microcontroller unit (MCU) to perform business logic on that key.
+          Ledger does security audits.
+        </li>
+        <li>
+          To take advantage of the secure element, you effectively must have some sort of PIN.
+          If your hardware wallet is lost/destroyed, this PIN is useless in recovering bitcoin.
+          If you use a standard BIP39 passphrase (i.e. 25th word) for your bitcoin you must now remember this PIN in addition to that passphrase.
+          <strong>Having more passwords to remember often causes users to use weaker ones and/or forget</strong>.
+        </li>
+        <li>
+          <strong>Complexity is the enemy of security</strong>.
+          If you know what you're doing, then you can take advantage of the secure element's benefits to enhance your security.
+          However, for a proper multisig setup (which has redundancy in case a key is lost/stolen), the benefit / complexity tradeoff is more of a personal preference.
+        </li>
+      </ol>
+      
+      <p>
         <strong>Q: What about hardware wallet X?</strong><br />
         <strong>A:</strong>
         I excluded hardware wallets that don't support multisig as this seems fundamentally broken for a security product.
         These include
+        <a href="https://shiftcrypto.ch/bitbox02/">BitBox02</a>,
         <a href="https://coolwallet.io/">CoolWallet S</a>,
         <a href="https://www.ellipal.com/collections/ellipal/products/hardwarewallet">Ellipal</a>,
         <a href="https://bitfi.com/">BitFi</a>, and
@@ -553,9 +520,7 @@
         While the best measure of supporting multisig across different hardware manufacturers is using Bitcoin Core (ideally with <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a>), hardware wallet <a href="http://docs.electrum.org/en/latest/hardware-linux.html#python-libraries">multisig with Electrum</a> is another possibility.
 
         <span class="small">
-          TODO: consider adding
-          <a href="https://shiftcrypto.ch/bitbox02/">BitBox02</a> and
-          <a href="https://www.archos.com/products/crypto/archos_safetmini/index.html">Archos Safe-T mini</a>?
+          TODO: consider adding <a href="https://www.archos.com/products/crypto/archos_safetmini/index.html">Archos Safe-T mini</a>?
         </small>
 
       </p>
